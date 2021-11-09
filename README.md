@@ -39,10 +39,10 @@ bundle install
 
 ```sh
 # Create user
-sudo -u postgres createuser blog -s
+sudo -u postgres createuser recipe_app -s
 
 # Create the database
-rake db:create
+rails db:create
 
 ## Apply migration
 rails db:migrate
