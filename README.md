@@ -78,6 +78,11 @@ RAILS_ENV=test rake db:reset
 rails g scaffold_controller model
 ```
 
+```sh
+### Undo migration
+rake db:migrate VERSION=0
+```
+
 ## Authors
 
 👤 **Usman**
