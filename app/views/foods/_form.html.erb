@@ -15,21 +15,21 @@
   <div class="field">
     <%= form.label :name, class: "label" %>
     <div class="control">
-      <%= form.text_field :name, autofocus: true, class: "input" %>
+      <%= form.text_field :name, autofocus: true, class: "input", required: true %>
     </div>
   </div>
 
   <div class="field">
     <%= form.label :measurement_unit, class: "label" %>
     <div class="control">
-      <%= form.text_field :measurement_unit, autofocus: true, class: "input" %>
+      <%= form.text_field :measurement_unit, autofocus: true, class: "input", required: true %>
     </div>
   </div>
 
   <div class="field">
     <%= form.label :price, class: "label" %>
     <div class="control">
-      <%= form.text_field :price, autofocus: true, class: "input", type: "number" %>
+      <%= form.text_field :price, autofocus: true, class: "input", type: "number", required: true %>
     </div>
   </div>
 

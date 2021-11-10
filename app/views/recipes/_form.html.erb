@@ -14,7 +14,7 @@
   <div class="field">
     <%= form.label :name, class: "label" %>
     <div class="control">
-      <%= form.text_field :name, autofocus: true, class: "input" %>
+      <%= form.text_field :name, autofocus: true, class: "input", required: true %>
     </div>
   </div>
 
@@ -23,13 +23,13 @@
       <div class="field">
         <%= form.label :preparation_time, class: "label" %>
         <div class="control">
-          <%= form.text_field :preparation_time, type: "time", class: "input" %>
+          <%= form.text_field :preparation_time, type: "time", class: "input", required: true %>
         </div>
       </div>
       <div class="field">
         <%= form.label :cooking_time, class: "label" %>
         <div class="control">
-          <%= form.text_field :cooking_time, type: "time", class: "input" %>
+          <%= form.text_field :cooking_time, type: "time", class: "input", required: true %>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
   <div class="field">
     <%= form.label :description, class: "label" %>
     <div class="control">
-      <%= form.text_area :description, class: "textarea" %>
+      <%= form.text_area :description, class: "textarea", required: true %>
     </div>
   </div>
 
