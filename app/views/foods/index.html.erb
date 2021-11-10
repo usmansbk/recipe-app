@@ -1,7 +1,5 @@
-<div class="is-flex is-justify-content-end">
-  <div class="buttons">
-    <%= link_to t('add_food'), new_food_path, class: "button is-small is-success" %>
-  </div>
+<div class="is-flex is-justify-content-end mb-4">
+  <%= link_to t('add_food'), new_food_path, class: "button is-small is-success" %>
 </div>
 <div class="table-container">
   <table class="table is-fullwidth">
@@ -20,7 +18,7 @@
           <th><%= food.name %></th>
           <td><%= food.measurement_unit %></td>
           <td>$<%= food.price %></td>
-          <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light" %></td>
+          <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light" %></td>
         </tr>
       <% end %>
     </tbody>
