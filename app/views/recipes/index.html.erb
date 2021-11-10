@@ -3,20 +3,4 @@
     <%= link_to 'New Recipe', new_recipe_path, class: "button is-small is-success" %>
   </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render @recipes, layout: 'recipes' %>
