@@ -12,10 +12,20 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <section class="section">
       <div class="container">
+        <% if alert.present? %>
+          <div class="notification is-danger is-light">
+            <button class="delete"></button>
+            <%= alert %>
+          </div>
+        <% end %>
+        <% if notice.present? %>
+          <div class="notification is-link is-light">
+            <button class="delete"></button>
+            <%= notice %>
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </section>
