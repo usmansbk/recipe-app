@@ -16,9 +16,8 @@
   		<% if user_signed_in? %>
         <div class="navbar-item">
           <div class="buttons">
-            <button class="button is-info is-small is-inverted is-static">
-              <%= current_user.name %>
-            </button>
+            <%= link_to "Food", foods_path, class: "button is-small is-success is-light" %>
+            <%= link_to "Recipes", recipes_path, class: "button is-small is-success is-light" %>
             <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-light" %>
           </div>
         </div>
