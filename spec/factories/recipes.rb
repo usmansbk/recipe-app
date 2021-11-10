@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :recipe do
-    name { "MyString" }
-    preparation_time { "MyString" }
-    cooking_time { "MyString" }
-    description { "MyText" }
+    name { 'MyString' }
+    preparation_time { 'MyString' }
+    cooking_time { 'MyString' }
+    description { 'MyText' }
     public { false }
-    references { "" }
+    references { '' }
   end
 end

@@ -73,6 +73,11 @@ rspec
 RAILS_ENV=test rake db:reset
 ```
 
+```sh
+### New Scaffold
+rails g scaffold_controller model
+```
+
 ## Authors
 
 👤 **Usman**
