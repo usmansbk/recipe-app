@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_food, only: %i[show destroy]
 
   # GET /foods or /foods.json
