@@ -1,7 +1,7 @@
 <%= form_with(model: recipe) do |form| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation" class="notification is-danger is-light">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+      <h2 class="title is-6"><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
       <ul>
         <% recipe.errors.each do |error| %>
@@ -16,6 +16,35 @@
     <div class="control">
       <%= form.text_field :name, autofocus: true, class: "input" %>
     </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <%= form.label :preparation_time, class: "label" %>
+        <div class="control">
+          <%= form.text_field :preparation_time, type: "time", class: "input" %>
+        </div>
+      </div>
+      <div class="field">
+        <%= form.label :cooking_time, class: "label" %>
+        <div class="control">
+          <%= form.text_field :cooking_time, type: "time", class: "input" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :public %>
+    <%= form.label :public, class: "checkbox" %>
   </div>
 
   <div class="actions">
