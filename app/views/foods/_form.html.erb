@@ -11,7 +11,28 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, autofocus: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :measurement_unit, class: "label" %>
+    <div class="control">
+      <%= form.text_field :measurement_unit, autofocus: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, class: "label" %>
+    <div class="control">
+      <%= form.text_field :price, autofocus: true, class: "input", type: "number" %>
+    </div>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success" %>
   </div>
 <% end %>
