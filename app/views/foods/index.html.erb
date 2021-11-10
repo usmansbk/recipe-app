@@ -1,7 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Foods</h1>
-
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to t('add_food'), new_food_path, class: "button is-small is-link" %>
+          </div>
+        </div>
+    </div>
+  </div>
+</nav>
 <table>
   <thead>
     <tr>
@@ -22,4 +31,3 @@
 
 <br>
 
-<%= link_to 'New Food', new_food_path %>
