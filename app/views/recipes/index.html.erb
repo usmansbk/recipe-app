@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Recipes</h1>
+<div class="is-flex is-justify-content-end">
+  <div class="buttons">
+    <%= link_to 'New Recipe', new_recipe_path, class: "button is-small is-success" %>
+  </div>
+</div>
 
 <table>
   <thead>
@@ -18,7 +20,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Recipe', new_recipe_path %>
