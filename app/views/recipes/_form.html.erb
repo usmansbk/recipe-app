@@ -1,15 +1,5 @@
 <%= form_with(model: recipe) do |form| %>
-  <% if recipe.errors.any? %>
-    <div id="error_explanation" class="notification is-danger is-light">
-      <h2 class="title is-6"><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
-      <ul>
-        <% recipe.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: "shared/error", locals: { errors: recipe.errors } %>
 
   <div class="field">
     <%= form.label :name, class: "label" %>

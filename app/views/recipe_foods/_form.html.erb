@@ -1,27 +1,5 @@
 <%= form_with(model: recipe_food) do |form| %>
-  <% if recipe_food.errors.any? %>
-    <div id="error_explanation" class="notification is-danger is-light">
-      <button class="delete"></button>
-      <h2 class="title is-6"><%= pluralize(recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>
-
-      <ul>
-        <% recipe_food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-  <div class="select is-fullwidth">
-    <select>
-      <option>Select Food</option>
-      <% @foods.each do |food| %>
-        <option><%= food.name %></option>
-      <% end %>
-    </select>
-  </div>
-  </div>
+  <%= render partial: "shared/error", locals: { errors: recipe_food.errors } %>
 
   <div class="field">
     <%= form.label :quantity, class: "label" %>

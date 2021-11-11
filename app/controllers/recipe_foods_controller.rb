@@ -8,7 +8,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   # GET /recipe_foods/1/edit
-  def edit; end
+  def edit
+    @foods = current_user.foods
+  end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
