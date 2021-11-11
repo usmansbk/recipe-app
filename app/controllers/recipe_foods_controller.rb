@@ -4,6 +4,7 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
+    @foods = current_user.foods
   end
 
   # GET /recipe_foods/1/edit
