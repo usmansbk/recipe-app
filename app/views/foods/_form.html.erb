@@ -18,7 +18,7 @@
   <div class="field">
     <%= form.label :price, class: "label" %>
     <div class="control">
-      <%= form.number_field :price, autofocus: true, class: "input", required: true %>
+      <%= form.number_field :price, autofocus: true, class: "input", required: true, min: 1 %>
     </div>
   </div>
 

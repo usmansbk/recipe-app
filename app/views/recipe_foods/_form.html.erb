@@ -4,7 +4,7 @@
   <div class="field">
     <%= form.label :quantity, class: "label" %>
     <div class="control">
-      <%= form.text_field :quantity, class: "input", type: "number", required: true %>
+      <%= form.text_field :quantity, class: "input", type: "number", required: true, min: 1 %>
     </div>
   </div>
 
