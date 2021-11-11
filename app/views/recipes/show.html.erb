@@ -1,10 +1,17 @@
 <div class="columns is-flex-direction-column is-align-items-center">
 	<div class="column is-three-quarters">
 		<div class="content">
-			<h1><%= @recipe.name %></h1>
-			<h5>Preparation time: <%= @recipe.preparation_time %> hour</h5>
-			<h5>Cooking time: <%= @recipe.cooking_time %> hour</h5>
+			<div class="is-flex is-justify-content-space-between is-align-items-start is-flex-grow-1">
+				<h1 class="is-flex is-flex-grow-1"><%= @recipe.name %></h1>
+				<small class="tag is-rounded is-info"><%= @recipe.public ? "Public" : "Private" %></small>
+			</div>
+			<p><span class="has-text-weight-semibold">Preparation time: </span><%= duration_in_words @recipe.preparation_time %></p>
+			<p><span class="has-text-weight-semibold">Cooking time: </span><%= duration_in_words @recipe.cooking_time %></p>
 			<p><%= @recipe.description %></p>
+		</div>
+		<div class="buttons">
+			<button class="button is-success">Generate shopping list</button>
+			<button class="button is-success">Add ingredient</button>
 		</div>
 	</div>
 </div>
