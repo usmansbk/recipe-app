@@ -9,7 +9,11 @@ class RecipeFoodsController < ApplicationController
   end
 
   # GET /recipe_foods/1/edit
-  def edit; end
+  def edit
+    @fd = RecipeFood.find_by(food_id: params[:id])
+    @food_id = params[:id]
+    @recipe_food = RecipeFood.new
+  end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
