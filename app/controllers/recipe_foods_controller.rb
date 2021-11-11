@@ -4,11 +4,11 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-    @foods = ['Rice']
+    set_foods
   end
 
   # GET /recipe_foods/1/edit
-  def edit;end
+  def edit; end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
@@ -18,6 +18,7 @@ class RecipeFoodsController < ApplicationController
       if @recipe_food.save
         format.html { redirect_to previous_url, notice: 'Recipe food was successfully created.' }
       else
+        set_foods
         format.html { render :new, status: :unprocessable_entity }
       end
     end
@@ -29,6 +30,7 @@ class RecipeFoodsController < ApplicationController
       if @recipe_food.update(recipe_food_params)
         format.html { redirect_to previous_url, notice: 'Recipe food was successfully updated.' }
       else
+        set_foods
         format.html { render :edit, status: :unprocessable_entity }
       end
     end
@@ -43,6 +45,10 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
+
+  def set_foods
+    @foods = Food.all.map { |food| [food.name, food.id] }
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
