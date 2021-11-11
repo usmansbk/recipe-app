@@ -17,8 +17,8 @@
           <td>$<%= recipe_food.quantity * recipe_food.food.price %></td>
           <td>
             <div class="buttons">
-              <%= link_to 'Edit', edit_recipe_food_path(id: recipe_food.food_id), class: "button is-small is-success is-light"  %>
-              <%= link_to 'Delete', recipe_food_path(id: recipe_food.food_id), method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light"  %>
+              <%= link_to 'Edit', edit_recipe_food_path(recipe_food), class: "button is-small is-success is-light"  %>
+              <%= link_to 'Delete', recipe_food_path(recipe_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light"  %>
             </div>
           </td>
         </tr>

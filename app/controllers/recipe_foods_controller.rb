@@ -9,13 +9,9 @@ class RecipeFoodsController < ApplicationController
   end
 
   # GET /recipe_foods/1/edit
-  def edit
-    @fd = RecipeFood.find_by(food_id: params[:id])
-    @food_id = params[:id]
-    @recipe_food = RecipeFood.new
-  end
+  def edit; end
 
-  # POST /recipe_foods or /recipe_foods.json
+  # POST /recipe_foods
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
 
@@ -31,7 +27,7 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
+  # PATCH/PUT /recipe_foods/1
   def update
     respond_to do |format|
       if @recipe_food.update(recipe_food_params)
@@ -44,7 +40,7 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  # DELETE /recipe_foods/1 or /recipe_foods/1.json
+  # DELETE /recipe_foods/1
   def destroy
     recipe = @recipe_food.recipe
     recipe.foods.delete(@recipe_food.food)
@@ -61,7 +57,7 @@ class RecipeFoodsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
-    @recipe_food = RecipeFood.find_by(food_id: params[:id])
+    @recipe_food = RecipeFood.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
