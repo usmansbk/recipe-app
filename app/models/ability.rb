@@ -6,7 +6,8 @@ class Ability
 
     can :read, Recipe, public: true
     can %i[destroy read], Recipe, user: user
-    can %i[destroy read], Food, user: user
+    can :destroy, Food, user: user
+    can :read, Food
     can :create, :all
   end
 end
