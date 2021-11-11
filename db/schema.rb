@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_11_11_064252) do
   create_table "recipe_foods", id: false, force: :cascade do |t|
     t.bigint "recipe_id", null: false
     t.bigint "food_id", null: false
-    t.decimal "quantity"
+    t.integer "quantity"
     t.index ["recipe_id", "food_id"], name: "index_recipe_foods_on_recipe_id_and_food_id"
   end
 
