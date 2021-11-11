@@ -17,7 +17,9 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_path(recipe_food_params[:recipe_id]), notice: 'Recipe food was successfully created.' }
+        format.html do
+          redirect_to recipe_path(recipe_food_params[:recipe_id]), notice: 'Recipe food was successfully created.'
+        end
       else
         set_foods
         format.html { render :new, status: :unprocessable_entity }
@@ -29,7 +31,9 @@ class RecipeFoodsController < ApplicationController
   def update
     respond_to do |format|
       if @recipe_food.update(recipe_food_params)
-        format.html { redirect_to recipe_path(recipe_food_params[:recipe_id]), notice: 'Recipe food was successfully updated.' }
+        format.html do
+          redirect_to recipe_path(recipe_food_params[:recipe_id]), notice: 'Recipe food was successfully updated.'
+        end
       else
         set_foods
         format.html { render :edit, status: :unprocessable_entity }
