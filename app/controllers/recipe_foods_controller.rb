@@ -1,11 +1,11 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[edit update destroy]
+  before_action :set_foods, only: %i[edit new update]
 
   # GET /recipe_foods/new
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new
-    set_foods
   end
 
   # GET /recipe_foods/1/edit
@@ -35,7 +35,6 @@ class RecipeFoodsController < ApplicationController
           redirect_to recipe_path(recipe_food_params[:recipe_id]), notice: 'Recipe food was successfully updated.'
         end
       else
-        set_foods
         format.html { render :edit, status: :unprocessable_entity }
       end
     end
@@ -44,7 +43,7 @@ class RecipeFoodsController < ApplicationController
   # DELETE /recipe_foods/1 or /recipe_foods/1.json
   def destroy
     recipe = @recipe_food.recipe
-    @recipe_food.destroy
+    recipe.foods.delete(@recipe_food.food)
     respond_to do |format|
       format.html { redirect_to recipe_path(recipe), notice: 'Recipe food was successfully destroyed.' }
     end
@@ -53,7 +52,7 @@ class RecipeFoodsController < ApplicationController
   private
 
   def set_foods
-    @foods = Food.all.map { |food| [food.name, food.id] }
+    @foods = current_user.foods.map { |food| [food.name, food.id] }
   end
 
   # Use callbacks to share common setup or constraints between actions.
