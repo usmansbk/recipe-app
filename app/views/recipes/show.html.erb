@@ -14,4 +14,7 @@
 			<%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "button is-success" %>
 		</div>
 	</div>
+	<div class="column is-three-quarters">
+		<%= render partial: "recipe_foods/index", locals: { recipe_foods: @recipe.recipe_foods } %>
+	</div>
 </div>

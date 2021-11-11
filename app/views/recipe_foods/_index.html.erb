@@ -8,10 +8,10 @@
   </thead>
 
   <tbody>
-    <% @recipe_foods.each do |recipe_food| %>
+    <% recipe_foods.each do |recipe_food| %>
       <tr>
-        <td><%= link_to 'Edit', edit_recipe_food_path(recipe_food) %></td>
-        <td><%= link_to 'Destroy', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_recipe_food_path(id: recipe_food.food_id) %></td>
+        <td><%= link_to 'Destroy', recipe_food_path(id: recipe_food.food_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
