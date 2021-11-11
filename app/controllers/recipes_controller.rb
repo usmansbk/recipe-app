@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: :public_recipes
   before_action :set_recipe, only: %i[show destroy]
 
   # GET /recipes
@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 
   # GET /public_recipes
   def public_recipes
-    @recipes = Recipe.accessible_by(current_ability)
+    @recipes = Recipe.where({ public: true })
   end
 
   # GET /recipes/1
