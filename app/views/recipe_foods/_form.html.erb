@@ -4,7 +4,7 @@
   <div class="field">
     <%= form.label :food, class: "label" %>
     <div class="select is-fullwidth">
-      <%= form.select :food, @foods %>
+      <%= form.select :food_id, @foods %>
     </div>
   </div>
 
@@ -14,6 +14,8 @@
       <%= form.text_field :quantity, class: "input", type: "number", required: true, min: 1 %>
     </div>
   </div>
+
+  <%= form.hidden_field :recipe_id, value: recipe_food.recipe_id %>
 
   <div class="actions">
     <%= form.submit class: "button is-success" %>
