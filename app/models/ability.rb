@@ -5,8 +5,8 @@ class Ability
     return unless user.present?
 
     can :read, Recipe, public: true
-    can :destroy, Recipe, user: user
-    can :destroy, Food, user: user
-    can %i[read create], :all
+    can %i[destroy read], Recipe, user: user
+    can %i[destroy read], Food, user: user
+    can :create, :all
   end
 end
