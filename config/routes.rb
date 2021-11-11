@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :recipe_foods, only: [:edit, :update, :destroy, :create]
   get 'public_recipes', to: 'recipes#public_recipes'
+  get 'general_shopping_list', to: 'users#show'
 end
