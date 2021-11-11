@@ -15,7 +15,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to @recipe_food, notice: 'Recipe food was successfully created.' }
+        format.html { redirect_to previous_url, notice: 'Recipe food was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -26,7 +26,7 @@ class RecipeFoodsController < ApplicationController
   def update
     respond_to do |format|
       if @recipe_food.update(recipe_food_params)
-        format.html { redirect_to @recipe_food, notice: 'Recipe food was successfully updated.' }
+        format.html { redirect_to previous_url, notice: 'Recipe food was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -37,7 +37,7 @@ class RecipeFoodsController < ApplicationController
   def destroy
     @recipe_food.destroy
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_to previous_url, notice: 'Recipe food was successfully destroyed.' }
     end
   end
 
