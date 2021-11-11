@@ -4,13 +4,11 @@ class RecipeFoodsController < ApplicationController
   # GET /recipe_foods/new
   def new
     @recipe_food = RecipeFood.new
-    @foods = current_user.foods
+    @foods = ['Rice']
   end
 
   # GET /recipe_foods/1/edit
-  def edit
-    @foods = current_user.foods
-  end
+  def edit;end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
