@@ -13,7 +13,9 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1
-  def show; end
+  def show
+    set_recipe
+  end
 
   # GET /recipes/new
   def new
