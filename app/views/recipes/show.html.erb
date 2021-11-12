@@ -10,9 +10,9 @@
 			<p><%= @recipe.description %></p>
 		</div>
 		<div class="buttons">
-			<button class="button is-success">Generate shopping list</button>
+			<button class="button is-success is-small">Generate shopping list</button>
 			<% if can? :update, @recipe %>
-				<%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "button is-success" %>
+				<%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "button is-success is-small" %>
 			<% end %>
 		</div>
 	</div>
