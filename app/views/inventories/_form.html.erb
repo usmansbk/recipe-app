@@ -8,6 +8,13 @@
     </div>
   </div>
 
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea", required: true %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit class: "button is-success" %>
   </div>

@@ -45,6 +45,6 @@ class InventoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def inventory_params
-    params.fetch(:inventory, {}).permit(:name)
+    params.fetch(:inventory, {}).permit(:name, :description)
   end
 end
