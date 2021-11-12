@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :recipe_foods, only: [:new]
   end
   resources :recipe_foods, only: [:edit, :update, :destroy, :create]
+  resources :inventories, only: [:index, :create, :new, :destroy]
+
   get 'public_recipes', to: 'recipes#public_recipes'
   get 'general_shopping_list', to: 'users#show'
 end
