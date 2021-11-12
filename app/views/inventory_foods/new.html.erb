@@ -1,5 +1,9 @@
-<h1>New Inventory Food</h1>
+<div class="columns is-justify-content-center">
+  <div class="column is-two-fifths-desktop">
+		<h1 class="title is-4">Add Food to inventory</h1>
 
-<%= render 'form', inventory_food: @inventory_food %>
+		<%= render 'form', inventory_food: @inventory_food %>
 
-<%= link_to 'Back', inventory_foods_path %>
+		<%= link_to 'Back', url_for(:back), class: "button is-light mt-2" %>
+	</div>
+</div>

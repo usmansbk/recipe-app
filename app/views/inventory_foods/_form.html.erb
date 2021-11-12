@@ -1,17 +1,23 @@
 <%= form_with(model: inventory_food) do |form| %>
-  <% if inventory_food.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(inventory_food.errors.count, "error") %> prohibited this inventory_food from being saved:</h2>
+  <%= render partial: "shared/error", locals: { errors: inventory_food.errors } %>
 
-      <ul>
-        <% inventory_food.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="field">
+    <%= form.label :food, class: "label" %>
+    <div class="select is-fullwidth">
+      <%= form.select :food_id, @foods %>
     </div>
-  <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, class: "label" %>
+    <div class="control">
+      <%= form.text_field :quantity, class: "input", type: "number", required: true, min: 1 %>
+    </div>
+  </div>
+
+  <%= form.hidden_field :inventory_id, value: inventory_food.inventory_id %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "button is-success" %>
   </div>
 <% end %>
