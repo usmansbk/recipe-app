@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_11_12_155850) do
   create_table "inventory_foods", force: :cascade do |t|
     t.bigint "inventory_id", null: false
     t.bigint "food_id", null: false
+    t.integer "quantity"
     t.index ["inventory_id", "food_id"], name: "index_inventory_foods_on_inventory_id_and_food_id"
   end
 

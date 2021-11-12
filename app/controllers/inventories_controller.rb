@@ -8,7 +8,9 @@ class InventoriesController < ApplicationController
   end
 
   # GET /inventories/1
-  def show; end
+  def show
+    @inventory = Inventory.includes(:inventory_foods).find(params[:id])
+  end
 
   # GET /inventories/new
   def new
