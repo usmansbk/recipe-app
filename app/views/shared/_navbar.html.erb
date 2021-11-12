@@ -18,6 +18,7 @@
         <%= link_to "My Recipes", recipes_path, class: "navbar-item #{current_page?(recipes_path) ? "is-active" : ""}" %>
         <%= link_to "Public Recipes", public_recipes_path, class: "navbar-item #{current_page?(public_recipes_path) ? "is-active" : ""}" %>
         <%= link_to "Shopping List", general_shopping_list_path, class: "navbar-item #{current_page?(general_shopping_list_path) ? "is-active" : ""}" %>
+        <%= link_to "Inventories", inventories_path, class: "navbar-item #{current_page?(inventories_path) ? "is-active" : ""}" %>
       </div>
       <div class="navbar-end">
           <div class="navbar-item">
