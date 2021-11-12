@@ -25,7 +25,7 @@
 						<tr>
 							<th><%= item.name %></th>
 							<td><%= pluralize(item.quantity, item.measurement_unit) %></td>
-							<td>$<%= item.price * item.quantity %></td>
+							<td>$<%= item.price %></td>
 						</tr>
       		<% end %>
 				</tbody>
