@@ -12,7 +12,7 @@
 		<div class="buttons">
 			<button class="button is-success is-small">Generate shopping list</button>
 			<% if can? :update, @recipe %>
-				<%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "button is-success is-small" %>
+				<%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "button is-success is-small" %>
 			<% end %>
 		</div>
 	</div>
