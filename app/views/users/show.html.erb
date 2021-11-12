@@ -21,11 +21,11 @@
 					</tr>
 				</thead>
 				<tbody>
-				  <% @foods.each do |food| %>
+				  <% @items.each do |item| %>
 						<tr>
-							<th><%= food.name %></th>
-							<td><%= food.quantity %></td>
-							<td>$<%= food.price %></td>
+							<th><%= item.name %></th>
+							<td><%= pluralize(item.quantity, item.measurement_unit) %></td>
+							<td>$<%= item.price * item.quantity %></td>
 						</tr>
       		<% end %>
 				</tbody>
