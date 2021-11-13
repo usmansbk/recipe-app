@@ -15,6 +15,7 @@ class InventoriesController < ApplicationController
   def shopping_list
     @inventory = Inventory.includes(:inventory_foods).find(params[:inventory_id])
     @recipe = Recipe.includes(:recipe_foods).find(params[:recipe_id])
+    @items = []
   end
 
   # GET /inventories/new
