@@ -14,12 +14,13 @@ class InventoriesController < ApplicationController
 
   def shopping_list
     @inventory = Inventory.includes(:inventory_foods).find(params[:inventory_id])
-    @recipe = Recipe.includes(:recipe_foods).find(params[:recipe_id])
-    @inventory_foods = InventoryFood.joins(:food, :inventory).where(food: { user: current_user },
-                                                                    inventory: { user: current_user })
-    @items_count = @inventory_foods.select('food_id').distinct.count
-    @total_amount = @inventory_foods.sum('quantity * price')
-    @items = @inventory_foods.group('food.name, price, measurement_unit')
+    @recipe = Recipe.includes(:foods).find(params[:recipe_id])
+
+    @recipe_foods = RecipeFood.joins(:food, :recipe).where(food: { user: current_user }, recipe: { id: @recipe.id })
+    @foods = @recipe.foods
+    @items_count = @foods.count
+    @total_amount = @recipe_foods.sum('quantity * price')
+    @items = @recipe_foods.group('food.name, price, measurement_unit')
       .select('food.name, SUM(quantity) as quantity, (sum(quantity) * price) as price, measurement_unit')
   end
 
