@@ -3,8 +3,8 @@
 		<h1 class="title has-text-centered">Shopping List</h1>
 		<div class="columns has-text-weight-semibold">
 			<div class="column">
-				<p>Amount of food to buy: 2</p>
-				<p>Total value of food needed: $53</p>
+				<p>Amount of food to buy: <%= @items_count %></p>
+				<p>Total value of food needed: $<%= @total_amount %></p>
 			</div>
 			<div class="column">
 				<p>Recipe: <%= link_to @recipe.name, recipe_path(@recipe) %></p>
