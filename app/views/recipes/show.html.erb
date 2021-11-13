@@ -20,28 +20,4 @@
 		<%= render partial: "recipe_foods/index", locals: { recipe_foods: @recipe.recipe_foods } %>
 	</div>
 </div>
-<div id="modal-picker" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <!-- Any other Bulma elements you want -->
-		<header class="modal-card-head">
-			<h1 class="title is-3">Generating Shopping List</h1>
-		</header>
-		<section class="modal-card-body">
-			<h4 class="subtitle">Choose an inventory to use</h4>
-			<div class="field has-addons">
-				<div class="control is-expanded">
-					<div class="select is-fullwidth">
-						<select name="country">
-							<option value="Argentina">Argentina</option>
-						</select>
-					</div>
-				</div>
-				<div class="control">
-					<button type="submit" class="button is-success">Generate</button>
-				</div>
-			</div>
-		</section>
-  </div>
-  <button id="close-modal" class="modal-close is-large" aria-label="close"></button>
-</div>
+<%= render "modal" %>
