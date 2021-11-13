@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   def show
     @recipe = Recipe.includes(:recipe_foods).find(params[:id])
+    set_inventories
   end
 
   # GET /recipes/new
@@ -44,6 +45,10 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def set_inventories
+    @inventories = current_user.inventories.map { |inventory| [inventory.name, inventory.id] }
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe
