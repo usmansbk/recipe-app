@@ -16,7 +16,7 @@
 						</div>
 					</div>
 					<div class="control">
-						<%= form.submit "Generate", class: "button is-success", name: nil %>
+						<%= form.submit "Generate", class: "button is-success", name: nil, disabled: @inventories.empty? %>
 					</div>
 				</div>
 			<% end %>
