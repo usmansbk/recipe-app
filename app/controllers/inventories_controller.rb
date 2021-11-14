@@ -14,14 +14,26 @@ class InventoriesController < ApplicationController
 
   def shopping_list
     @inventory = Inventory.includes(:inventory_foods).find(params[:inventory_id])
-    @recipe = Recipe.includes(:foods).find(params[:recipe_id])
+    @recipe = Recipe.includes(:recipe_foods).find(params[:recipe_id])
 
-    @recipe_foods = RecipeFood.joins(:food, :recipe).where(food: { user: current_user }, recipe: { id: @recipe.id })
-    @foods = @recipe.foods
-    @items_count = @foods.count
-    @total_amount = @recipe_foods.sum('quantity * price')
-    @items = @recipe_foods.group('food.name, price, measurement_unit')
-      .select('food.name, SUM(quantity) as quantity, (sum(quantity) * price) as price, measurement_unit')
+    @items = []
+    @total_amount = 0
+    @recipe.recipe_foods.find_each do |recipe_food|
+      inventory_food = @inventory.inventory_foods.find_by(food: recipe_food.food)
+      difference = inventory_food.quantity - recipe_food.quantity
+      if difference.negative?
+        food = recipe_food.food
+        quantity = difference.abs
+        price = quantity * food.price
+        name = food.name
+        measurement_unit = food.measurement_unit
+
+        item = { name: name, price: price, quantity: quantity, measurement_unit: measurement_unit }
+        @total_amount += price
+        @items.push(OpenStruct.new(item))
+      end
+    end
+    @items_count = @items.length
   end
 
   # GET /inventories/new
