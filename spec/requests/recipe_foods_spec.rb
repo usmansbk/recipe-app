@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/recipe_foods', type: :request do
-
   describe 'GET /index' do
     it 'renders a successful response' do
       RecipeFood.create! valid_attributes
