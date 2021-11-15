@@ -1,0 +1,6 @@
+<h1 class="title has-text-centered"><%= @inventory.name %></h1>
+<div class="is-flex is-justify-content-end mb-4">
+  <%= link_to 'Add Food', new_inventory_inventory_food_path(@inventory), class: "button is-small is-success" %>
+</div>
+<%= render partial: "inventory_foods/index", locals: { inventory_foods: @inventory.inventory_foods } %>
+

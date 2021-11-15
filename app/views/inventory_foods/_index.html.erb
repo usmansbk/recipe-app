@@ -1,0 +1,25 @@
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @inventory.inventory_foods.each do |inventory_food| %>
+        <tr>
+          <th><%= inventory_food.food.name %></th>
+          <td><%= pluralize(inventory_food.quantity, inventory_food.food.measurement_unit) %></td>
+			    <% if can? :update, inventory_food.inventory %>
+            <td>
+              <%= link_to 'Delete', inventory_food_path(inventory_food), method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light"  %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

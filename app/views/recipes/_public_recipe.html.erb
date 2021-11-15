@@ -1,0 +1,12 @@
+<div class="column media is-half-desktop">
+	<div class="columns">
+		<div class="column">
+			<%= link_to truncate(public_recipe.name, length: 80), public_recipe, class: "is-size-4" %>
+			<p class="is-size-7 is-italic"><span class="has-text-weight-semibold">By:</span> <%= public_recipe.user.name %></p>
+		</div>
+		<div class="column is-flex-grow-1">
+			<p><span class="has-text-weight-semibold">Total food items:</span> <%= public_recipe.total_items %></p>
+			<p><span class="has-text-weight-semibold">Total price:</span> $<%= public_recipe.total_price %></p>
+		</div>
+	</div>
+</div>

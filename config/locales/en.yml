@@ -30,4 +30,5 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  brand: "Recipe"
+  brand: "RecipeA"
+  add_food: "Add Food"

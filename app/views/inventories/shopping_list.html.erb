@@ -1,0 +1,16 @@
+<div class="columns is-flex-direction-column is-align-items-center">
+	<div class="column is-half">
+		<h1 class="title has-text-centered">Shopping List</h1>
+		<div class="columns has-text-weight-semibold">
+			<div class="column">
+				<p>Amount of food to buy: <%= @items_count %></p>
+				<p>Total value of food needed: $<%= @total_amount %></p>
+			</div>
+			<div class="column">
+				<p>Recipe: <%= link_to @recipe.name, recipe_path(@recipe) %></p>
+				<p>Inventory: <%= link_to @inventory.name, inventory_path(@inventory) %></p>
+			</div>
+		</div>
+	</div>
+	<%= render partial: "shared/shopping_list", locals: { items: @items }%>
+</div>

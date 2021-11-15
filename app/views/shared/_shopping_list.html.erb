@@ -1,0 +1,22 @@
+<div class="column is-two-fifths">
+	<div class="table-container">
+		<table class="table is-fullwidth">
+			<thead>
+				<tr>
+					<th>Food</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+			  <% @items.each do |item| %>
+					<tr>
+						<th><%= item.name %></th>
+						<td><%= pluralize(item.quantity, item.measurement_unit) %></td>
+						<td>$<%= item.price %></td>
+					</tr>
+     		<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

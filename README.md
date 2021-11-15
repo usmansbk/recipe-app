@@ -73,13 +73,27 @@ rspec
 RAILS_ENV=test rake db:reset
 ```
 
+```sh
+### New Scaffold
+rails g scaffold_controller model
+```
+
+```sh
+### Undo migration
+rake db:migrate VERSION=0
+```
+
 ## Authors
 
 👤 **Usman**
 
 - GitHub: [@usmansbk](https://github.com/usmansbk)
-- Twitter: [@usmansbk](https://twitter.com/usmansbk)
 - LinkedIn: [Usman Suleiman Babakolo](https://linkedin.com/in/usmansbk)
+
+👤 **Abraham**
+
+- GitHub: [@Metsanpeitto](https://github.com/Metsanpeitto)
+- LinkedIn: [Abraham R](https://www.linkedin.com/in/abraham-rodriguez-3283a319a/)
 
 ## 🤝 Contributing
 

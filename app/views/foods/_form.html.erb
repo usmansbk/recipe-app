@@ -1,0 +1,28 @@
+<%= form_with(model: food) do |form| %>
+  <%= render partial: "shared/error", locals: { errors: food.errors } %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, autofocus: true, class: "input", required: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :measurement_unit, class: "label" %>
+    <div class="control">
+      <%= form.text_field :measurement_unit, autofocus: true, class: "input", required: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, class: "label" %>
+    <div class="control">
+      <%= form.number_field :price, autofocus: true, class: "input", required: true, min: 1 %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
+  </div>
+<% end %>

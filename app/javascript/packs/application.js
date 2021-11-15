@@ -22,4 +22,12 @@ document.addEventListener("turbolinks:load", () => {
       });
     }
   );
+
+  document.getElementById("open-modal").addEventListener("click", () => {
+    document.getElementById("modal-picker").classList.add("is-active");
+  });
+
+  document.getElementById("close-modal").addEventListener("click", () => {
+    document.getElementById("modal-picker").classList.remove("is-active");
+  });
 });
