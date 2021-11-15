@@ -57,15 +57,6 @@ rails db:schema:load
 rails s
 ```
 
-### Test
-
-```sh
-# Load mock data
-rails db:seed
-
-rspec
-```
-
 ### Troubleshoot
 
 ```sh
