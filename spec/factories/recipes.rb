@@ -5,5 +5,6 @@ FactoryBot.define do
     cooking_time { 'MyString' }
     description { 'MyText' }
     public { false }
+    user
   end
 end

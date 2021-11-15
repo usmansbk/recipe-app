@@ -12,6 +12,12 @@ FactoryBot.define do
     email
     password { 'secret_token' }
 
+    factory :user_with_recipes do
+      recipes do
+        Array.new(5) { association(:recipe) }
+      end
+    end
+
     factory :user_with_foods do
       foods do
         Array.new(5) { association(:food) }
