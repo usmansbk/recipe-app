@@ -39,7 +39,7 @@ RSpec.describe '/recipes', type: :request do
       expect(response).to redirect_to(recipes_url)
     end
 
-    it 'cant delete authorized recipe' do
+    it 'cant delete un-authorized recipe' do
       recipe = FactoryBot.create(:recipe)
       expect { delete recipe_url(recipe) }.to raise_error 'You are not authorized to access this page.'
     end
