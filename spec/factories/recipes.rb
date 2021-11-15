@@ -5,6 +5,5 @@ FactoryBot.define do
     cooking_time { 'MyString' }
     description { 'MyText' }
     public { false }
-    references { '' }
   end
 end
