@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :recipe_food do
-    recipe { nil }
-    food { nil }
+    quantity { 2 }
+    recipe
+    food
   end
 end

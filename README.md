@@ -57,6 +57,12 @@ rails db:schema:load
 rails s
 ```
 
+### Test
+
+```sh
+rspec
+```
+
 ### Troubleshoot
 
 ```sh
