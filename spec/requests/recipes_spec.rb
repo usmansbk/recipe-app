@@ -10,6 +10,13 @@ RSpec.describe '/recipes', type: :request do
     end
   end
 
+  describe 'GET /public_recipes' do
+    it 'renders a successful response' do
+      get public_recipes_url
+      expect(response).to be_successful
+    end
+  end
+
   describe 'GET /show' do
     it 'renders a successful response' do
       recipe = FactoryBot.create(:recipe)
@@ -20,15 +27,6 @@ RSpec.describe '/recipes', type: :request do
     it 'cant access private recipe' do
       recipe = FactoryBot.create(:recipe, public: false)
       expect { get recipe_url(recipe) }.to raise_error 'You are not authorized to access this page.'
-    end
-  end
-
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'redirects to the created recipe' do
-        post recipes_url, params: { recipe: FactoryBot.build(:recipe, user: @user) }
-        expect(response).to redirect_to(recipe_url(Recipe.last))
-      end
     end
   end
 

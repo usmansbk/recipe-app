@@ -4,7 +4,7 @@ FactoryBot.define do
     preparation_time { '11:00' }
     cooking_time { '11:00' }
     description { 'MyText' }
-    public { true }
+    add_attribute(:public) { true }
     user
   end
 end

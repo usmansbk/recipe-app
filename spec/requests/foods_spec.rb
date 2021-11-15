@@ -17,26 +17,9 @@ RSpec.describe '/foods', type: :request do
     end
   end
 
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Food' do
-        expect do
-          post foods_url, params: { food: FactoryBot.create(:food) }
-        end.to be_successful
-      end
-    end
-  end
-
   describe 'DELETE /destroy' do
-    it 'destroys the requested food' do
-      food = FactoryBot.create(:food)
-      expect do
-        delete food_url(food)
-      end.to change(Food, :count).by(-1)
-    end
-
     it 'redirects to the foods list' do
-      food = FactoryBot.create(:food)
+      food = FactoryBot.create(:food, user: @user)
       delete food_url(food)
       expect(response).to redirect_to(foods_url)
     end
