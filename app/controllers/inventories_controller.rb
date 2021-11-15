@@ -28,9 +28,10 @@ class InventoriesController < ApplicationController
         name = food.name
         measurement_unit = food.measurement_unit
 
-        item = { name: name, price: price, quantity: quantity, measurement_unit: measurement_unit }
+        food_item = Struct.new(:name, :price, :quantity, :measurement_unit)
+        item = food_item.new(name, price, quantity, measurement_unit)
         @total_amount += price
-        @items.push(OpenStruct.new(item))
+        @items.push(item)
       end
     end
     @items_count = @items.length
