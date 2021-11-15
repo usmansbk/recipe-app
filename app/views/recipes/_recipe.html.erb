@@ -1,0 +1,17 @@
+<div class="column media is-half-desktop">
+	<div class="columns">
+		<div class="column is-flex-grow-1">
+			<div class="block">
+				<%= link_to truncate(recipe.name, length: 80), recipe, class: "is-size-4" %>
+			</div>
+			<% if can? :destroy, recipe %>
+				<div class="block">
+					<%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light" %>
+				</div>
+			<% end %>
+		</div>
+		<div class="column is-flex-grow-2">
+			<p><%= truncate(recipe.description, length: 140) %></p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<%= form_with(model: recipe) do |form| %>
+  <%= render partial: "shared/error", locals: { errors: recipe.errors } %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, autofocus: true, class: "input", required: true %>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+        <%= form.label :preparation_time, class: "label" %>
+        <div class="control">
+          <%= form.time_field :preparation_time, class: "input", required: true %>
+        </div>
+      </div>
+      <div class="field">
+        <%= form.label :cooking_time, class: "label" %>
+        <div class="control">
+          <%= form.time_field :cooking_time, class: "input", required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea", required: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.check_box :public %>
+    <%= form.label :public, class: "checkbox" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
+  </div>
+<% end %>

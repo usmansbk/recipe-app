@@ -1,0 +1,21 @@
+<%= form_with(model: inventory) do |form| %>
+  <%= render partial: "shared/error", locals: { errors: inventory.errors } %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, autofocus: true, class: "input", required: true %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <div class="control">
+      <%= form.text_area :description, class: "textarea", required: true %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<div id="modal-picker" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+		<header class="modal-card-head">
+			<h1 class="title is-3">Generating Shopping List</h1>
+		</header>
+		<section class="modal-card-body">
+			<h4 class="subtitle">Choose an inventory to use</h4>
+
+			<%= form_with(url: shopping_list_path, method: :get) do |form| %>
+				<div class="field has-addons">
+  				<%= form.hidden_field :recipe_id, value: @recipe.id %>
+					<div class="control is-expanded">
+						<div class="select is-fullwidth">
+      				<%= form.select :inventory_id, @inventories %>
+						</div>
+					</div>
+					<div class="control">
+						<%= form.submit "Generate", class: "button is-success", name: nil, disabled: @inventories.empty? %>
+					</div>
+				</div>
+			<% end %>
+		</section>
+  </div>
+  <button id="close-modal" class="modal-close is-large" aria-label="close"></button>
+</div>

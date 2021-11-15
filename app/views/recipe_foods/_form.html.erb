@@ -1,0 +1,23 @@
+<%= form_with(model: recipe_food) do |form| %>
+  <%= render partial: "shared/error", locals: { errors: recipe_food.errors } %>
+
+  <div class="field">
+    <%= form.label :food, class: "label" %>
+    <div class="select is-fullwidth">
+      <%= form.select :food_id, @foods %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, class: "label" %>
+    <div class="control">
+      <%= form.text_field :quantity, class: "input", type: "number", required: true, min: 1 %>
+    </div>
+  </div>
+
+  <%= form.hidden_field :recipe_id, value: recipe_food.recipe_id %>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
+  </div>
+<% end %>
