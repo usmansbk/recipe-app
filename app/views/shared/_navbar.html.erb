@@ -10,4 +10,19 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+  		<% if user_signed_in? %>
+        <div class="navbar-item">
+          <div class="buttons">
+            <button class="button is-info is-small is-inverted is-static">
+              <%= current_user.name %>
+            </button>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button is-small is-danger is-light" %>
+          </div>
+        </div>
+			<% end %>
+    </div>
+  </div>
 </nav>

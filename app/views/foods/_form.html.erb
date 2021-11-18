@@ -1,0 +1,39 @@
+<%= form_with(model: food) do |form| %>
+  <% if food.errors.any? %>
+    <div id="error_explanation" class="notification is-danger is-light">
+      <button class="delete"></button>
+      <h2 class="title is-6"><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, class: "label" %>
+    <div class="control">
+      <%= form.text_field :name, autofocus: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :measurement_unit, class: "label" %>
+    <div class="control">
+      <%= form.text_field :measurement_unit, autofocus: true, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, class: "label" %>
+    <div class="control">
+      <%= form.text_field :price, autofocus: true, class: "input", type: "number" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "button is-success" %>
+  </div>
+<% end %>
