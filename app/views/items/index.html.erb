@@ -1,0 +1,25 @@
+<div class="is-flex is-justify-content-end mb-4">
+  <%= link_to 'New Item', new_item_path, class: "button is-small is-success" %>
+</div>
+<div class="table-container">
+  <table class="table is-fullwidth">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th><abbr title="Unit price">Price</abbr></th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <th><%= item.name %></th>
+          <td>$<%= item.price %></td>
+          <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-light" %>
+            <%= link_to 'Edit Item', edit_item_path(item), class: "button is-small is-success" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
